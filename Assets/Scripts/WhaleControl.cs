@@ -8,7 +8,6 @@ public class WhaleControl : MonoBehaviour {
 	float force = 100f;
 
 	void Start () {
-		Physics.gravity = new Vector3(0, -0.5F, 0);
 		Physics.IgnoreLayerCollision(8,8);
 		whales = new List<GameObject>(GameObject.FindGameObjectsWithTag("Whale"));
 	}
