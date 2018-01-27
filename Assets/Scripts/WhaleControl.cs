@@ -5,6 +5,7 @@ using UnityEngine;
 public class WhaleControl : MonoBehaviour {
 
 	public List<GameObject> groups;
+	public List<GameObject> hearts;
 	public List<GameObject> whales;
 	public List<GameObject> couple1;
 	public List<GameObject> couple2;
@@ -15,6 +16,7 @@ public class WhaleControl : MonoBehaviour {
 		Physics.IgnoreLayerCollision(8,8);
 		whales = new List<GameObject>(GameObject.FindGameObjectsWithTag("Whale"));
 		groups = new List<GameObject>(GameObject.FindGameObjectsWithTag("Sphere"));
+
 		List<GameObject> whalesTemp = new List<GameObject>(whales);
 
 		couple1 = new List<GameObject>();
@@ -55,6 +57,7 @@ public class WhaleControl : MonoBehaviour {
 					groups[i].transform.GetChild(2).GetComponent<MoveControl>().particles.Stop();
 					groups[i].GetComponent<SpriteRenderer>().enabled=false;
 					correct++;
+					hearts[i].GetComponent<ParticleSystem>().Play();
 				}
 
 				if(couple2.Contains(groups[i].transform.GetChild(0).gameObject) && 
@@ -70,6 +73,7 @@ public class WhaleControl : MonoBehaviour {
 					groups[i].GetComponent<SpriteRenderer>().enabled=false;
 
 					correct++;
+					hearts[i].GetComponent<ParticleSystem>().Play();
 				}
 
 				if(couple3.Contains(groups[i].transform.GetChild(0).gameObject) && 
@@ -85,6 +89,7 @@ public class WhaleControl : MonoBehaviour {
 					groups[i].GetComponent<SpriteRenderer>().enabled=false;
 
 					correct++;
+					hearts[i].GetComponent<ParticleSystem>().Play();
 				}
 			}
 		}

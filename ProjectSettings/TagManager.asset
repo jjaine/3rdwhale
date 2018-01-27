@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Whale
   - Sphere
+  - Hearts
   layers:
   - Default
   - TransparentFX
