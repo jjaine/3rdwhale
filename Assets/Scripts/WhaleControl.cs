@@ -11,6 +11,11 @@ public class WhaleControl : MonoBehaviour {
 	public List<GameObject> couple2;
 	public List<GameObject> couple3;
 	float force = 100f;
+	public AudioSource theme, themelpf;
+	float themeValue=1, lpfValue=0;
+	public List<AudioClip> fSounds;
+	public List<AudioClip> gSounds;
+	public List<AudioClip> amSounds;
 
 	void Start () {
 		Physics.IgnoreLayerCollision(8,8);
@@ -37,6 +42,24 @@ public class WhaleControl : MonoBehaviour {
 			int idx = Random.Range(0,whalesTemp.Count);
 			couple3.Add(whalesTemp[idx]);
 			whalesTemp.RemoveAt(idx);
+		}
+
+		foreach(GameObject whale in whales){
+			if(couple1.Contains(whale)){
+				int idx = Random.Range(0, fSounds.Count);
+				whale.GetComponent<AudioSource>().clip = fSounds[idx];
+				fSounds.RemoveAt(idx);
+			}
+			else if(couple2.Contains(whale)){
+				int idx = Random.Range(0, gSounds.Count);
+				whale.GetComponent<AudioSource>().clip = gSounds[idx];
+				gSounds.RemoveAt(idx);
+			}
+			else if(couple3.Contains(whale)){
+				int idx = Random.Range(0, amSounds.Count);
+				whale.GetComponent<AudioSource>().clip = amSounds[idx];
+				amSounds.RemoveAt(idx);
+			}
 		}
 
 	}
@@ -97,18 +120,29 @@ public class WhaleControl : MonoBehaviour {
 	}
 
 	public void PlayGroup(int i){
+		//theme.volume = 0;
+		//themelpf.volume = 1;
+		SetValues(0, 1);
+
 		foreach(GameObject whale in whales){
-			whale.GetComponent<AudioSource>().loop = false;
 			whale.GetComponent<AudioSource>().Stop();
+			whale.GetComponent<MoveControl>().particles.Stop();
 		}
 
-		groups[i].transform.GetChild(0).GetComponent<AudioSource>().Play();
-		groups[i].transform.GetChild(1).GetComponent<AudioSource>().Play();
-		groups[i].transform.GetChild(2).GetComponent<AudioSource>().Play();
-
-		foreach(GameObject whale in whales){
-			whale.GetComponent<AudioSource>().loop = true;
+		for(int j=0; j<groups[i].transform.childCount; j++){
+			groups[i].transform.GetChild(j).GetComponent<AudioSource>().Play();
+			groups[i].transform.GetChild(j).GetComponent<MoveControl>().particles.Play();
 		}
+	}
+
+	void Update(){
+		theme.volume += (themeValue-theme.volume)/100;
+		themelpf.volume += (lpfValue-themelpf.volume)/100;
+	}
+
+	public void SetValues(int themeV, int lpfV){
+		themeValue = themeV;
+		lpfValue = lpfV;
 	}
 
 
