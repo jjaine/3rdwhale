@@ -21,10 +21,7 @@ GameObject:
   - component: {fileID: 4196729647980608}
   - component: {fileID: 212081781249184482}
   - component: {fileID: 95698499996785554}
-  - component: {fileID: 65009289580425542}
   - component: {fileID: 114359319677163734}
-  - component: {fileID: 65349403324482836}
-  - component: {fileID: 114508442514238878}
   m_Layer: 0
   m_Name: valasAnimated
   m_TagString: Untagged
@@ -45,30 +42,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &65009289580425542
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1278102959397074}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 14, y: 7, z: 11}
-  m_Center: {x: 7.265, y: 0, z: 0.044191256}
---- !u!65 &65349403324482836
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1278102959397074}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 14, y: 7, z: 11}
-  m_Center: {x: 7.265, y: 0, z: 0.044191256}
 --- !u!95 &95698499996785554
 Animator:
   serializedVersion: 3
@@ -87,18 +60,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114359319677163734
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1278102959397074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 235e86ff53b5029458a0a2b2a35ac88a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  valas: {fileID: 1278102959397074}
---- !u!114 &114508442514238878
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
