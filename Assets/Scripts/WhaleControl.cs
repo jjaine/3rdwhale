@@ -96,5 +96,20 @@ public class WhaleControl : MonoBehaviour {
 		Debug.Log("Correct was: "+correct);
 	}
 
+	public void PlayGroup(int i){
+		foreach(GameObject whale in whales){
+			whale.GetComponent<AudioSource>().loop = false;
+			whale.GetComponent<AudioSource>().Stop();
+		}
+
+		groups[i].transform.GetChild(0).GetComponent<AudioSource>().Play();
+		groups[i].transform.GetChild(1).GetComponent<AudioSource>().Play();
+		groups[i].transform.GetChild(2).GetComponent<AudioSource>().Play();
+
+		foreach(GameObject whale in whales){
+			whale.GetComponent<AudioSource>().loop = true;
+		}
+	}
+
 
 }

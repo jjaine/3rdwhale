@@ -32,9 +32,11 @@ public class MoveControl : MonoBehaviour {
 
 		for(int i=0; i<whales.Count; i++){
 			whales[i].GetComponent<MoveControl>().particles.Stop();
+			whales[i].GetComponent<AudioSource>().Stop();
 		}
 
 		particles.Play();
+		GetComponent<AudioSource>().Play();
 	}
 
 	void OnMouseDrag(){
