@@ -10,9 +10,9 @@ public class Grouping : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerExit(Collider c){
+	/*void OnTriggerExit(Collider c){
 		if(c.tag == "Whale"){
 			c.transform.parent = transform.parent;
 		}
-	}
+	}*/
 }
