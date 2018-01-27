@@ -48,8 +48,12 @@ public class WhaleControl : MonoBehaviour {
 					couple1.Contains(groups[i].transform.GetChild(2).gameObject)){
 					Debug.Log("couple1 in "+groups[i].transform.name);
 					groups[i].transform.GetChild(0).GetComponent<Collider>().enabled = false;
+					groups[i].transform.GetChild(0).GetComponent<MoveControl>().particles.Stop();
 					groups[i].transform.GetChild(1).GetComponent<Collider>().enabled = false;
+					groups[i].transform.GetChild(1).GetComponent<MoveControl>().particles.Stop();
 					groups[i].transform.GetChild(2).GetComponent<Collider>().enabled = false;
+					groups[i].transform.GetChild(2).GetComponent<MoveControl>().particles.Stop();
+					groups[i].GetComponent<SpriteRenderer>().enabled=false;
 					correct++;
 				}
 
@@ -58,8 +62,13 @@ public class WhaleControl : MonoBehaviour {
 					couple2.Contains(groups[i].transform.GetChild(2).gameObject)){
 					Debug.Log("couple2 in "+groups[i].transform.name);
 					groups[i].transform.GetChild(0).GetComponent<Collider>().enabled = false;
+					groups[i].transform.GetChild(0).GetComponent<MoveControl>().particles.Stop();
 					groups[i].transform.GetChild(1).GetComponent<Collider>().enabled = false;
+					groups[i].transform.GetChild(1).GetComponent<MoveControl>().particles.Stop();
 					groups[i].transform.GetChild(2).GetComponent<Collider>().enabled = false;
+					groups[i].transform.GetChild(2).GetComponent<MoveControl>().particles.Stop();
+					groups[i].GetComponent<SpriteRenderer>().enabled=false;
+
 					correct++;
 				}
 
@@ -68,8 +77,13 @@ public class WhaleControl : MonoBehaviour {
 					couple3.Contains(groups[i].transform.GetChild(2).gameObject)){
 					Debug.Log("couple3 in "+groups[i].transform.name);
 					groups[i].transform.GetChild(0).GetComponent<Collider>().enabled = false;
+					groups[i].transform.GetChild(0).GetComponent<MoveControl>().particles.Stop();
 					groups[i].transform.GetChild(1).GetComponent<Collider>().enabled = false;
+					groups[i].transform.GetChild(1).GetComponent<MoveControl>().particles.Stop();
 					groups[i].transform.GetChild(2).GetComponent<Collider>().enabled = false;
+					groups[i].transform.GetChild(2).GetComponent<MoveControl>().particles.Stop();
+					groups[i].GetComponent<SpriteRenderer>().enabled=false;
+
 					correct++;
 				}
 			}
