@@ -8,10 +8,23 @@ public class MoveControl : MonoBehaviour {
 	bool locked;
 	public ParticleSystem particles;
 	float force = 100f;
-	
+
+	float x,y;
+	float speed = 30.0f;
+	float maxSpeed = 100.0f;
+
 	void Start () {
 		rb = GetComponent<Rigidbody>();
 		particles = transform.GetChild(1).GetComponent<ParticleSystem>();
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		x = Input.mousePosition.x;
+    	y = Input.mousePosition.y;
+    	if(!Input.GetMouseButton(0)){
+    		rb.velocity = Vector3.zero;
+    	}
 	}
 
 	void OnMouseDown(){
@@ -22,42 +35,14 @@ public class MoveControl : MonoBehaviour {
 		}
 
 		particles.Play();
+	}
 
-		RaycastHit hit;
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-		if(Physics.Raycast(ray, out hit)){
-
-			if(hit.collider == transform.GetComponent<Collider>()){
-				if(!locked){
-					float xPoint = Camera.main.transform.InverseTransformPoint(transform.position).x;
-
-					if(hit.point.x-xPoint > 0.4f){
-						rb.AddForce(new Vector3(-0.2f, 0.5f, 0)*force);
-					}
-					else if(hit.point.x-xPoint < -0.4f){
-						rb.AddForce(new Vector3(0.2f, 0.5f, 0)*force);
-					}
-					else{
-						rb.AddForce(new Vector3(0, 0.5f, 0)*force);
-					}
-				}
-			}
-			else if(hit.collider == transform.GetChild(0).GetComponent<Collider>()){
-				if(!locked){
-					rb.useGravity = false;
-					rb.velocity = Vector3.zero;
-				}
-				else{
-					rb.useGravity = true;
-				}
-
-				locked = !locked;
-				if(transform.GetChild(0).GetComponent<SpriteRenderer>().color == Color.red)
-					transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.green;
-				else
-					transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.red;
-			}
+	void OnMouseDrag(){
+		if(!locked){
+			Vector3 v = (Camera.main.ScreenToWorldPoint(new Vector3(x,y,9.0f))-transform.position)*speed;
+			if(v.magnitude > maxSpeed) 
+				v*=maxSpeed/v.magnitude;
+			rb.velocity = v;
 		}
 	}
 }
