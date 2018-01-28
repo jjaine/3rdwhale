@@ -909,6 +909,14 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: ca057be3da38148ecb8a44d894d595fd,
         type: 3}
+    - target: {fileID: 4808272714807278, guid: 57e82764359904274bd9f7a08d29df2f, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4808272714807278, guid: 57e82764359904274bd9f7a08d29df2f, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 57e82764359904274bd9f7a08d29df2f, type: 2}
   m_IsPrefabParent: 0
@@ -5207,7 +5215,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7465b8212d5c24d04b524bbb10cf98b3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0

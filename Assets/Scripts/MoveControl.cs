@@ -38,7 +38,7 @@ public class MoveControl : MonoBehaviour {
 		particles.Play();
 		GetComponent<AudioSource>().Play();
 		
-		Camera.main.GetComponent<WhaleControl>().SetValues(1, 0);
+		Camera.main.GetComponent<WhaleControl>().SetValues(0.3f, 0);
 	}
 
 	void OnMouseDrag(){
