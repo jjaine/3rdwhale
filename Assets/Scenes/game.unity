@@ -6532,6 +6532,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3b4ae4d1dd4bb40968e1bff95dba5dbf, type: 3}
   - {fileID: 8300000, guid: fc135c5b8ff574580b5826db14b24607, type: 3}
   - {fileID: 8300000, guid: ed5d394d585ea4c268325a9c22734c0a, type: 3}
+  buttons:
+  - {fileID: 365568072}
+  - {fileID: 699613051}
+  - {fileID: 1308568366}
 --- !u!1 &1654974928 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1158051075650442, guid: 57e82764359904274bd9f7a08d29df2f,

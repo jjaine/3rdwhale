@@ -16,6 +16,7 @@ public class WhaleControl : MonoBehaviour {
 	public List<AudioClip> fSounds;
 	public List<AudioClip> gSounds;
 	public List<AudioClip> amSounds;
+	public List<GameObject> buttons;
 
 	void Start () {
 		Physics.IgnoreLayerCollision(8,8);
@@ -90,6 +91,8 @@ public class WhaleControl : MonoBehaviour {
 					child3.position = new Vector3(child1.position.x, child2.position.y+0.7f, child3.position.z);
 					child2.GetComponent<Animator>().SetTrigger("rot");
 					child3.GetComponent<Animator>().SetTrigger("ready");
+
+					buttons[0].SetActive(false);
 				}
 
 				if(couple2.Contains(groups[i].transform.GetChild(0).gameObject) && 
@@ -114,6 +117,8 @@ public class WhaleControl : MonoBehaviour {
 					child3.position = new Vector3(child1.position.x, child2.position.y+0.7f, child3.position.z);
 					child2.GetComponent<Animator>().SetTrigger("rot");
 					child3.GetComponent<Animator>().SetTrigger("ready");
+
+					buttons[1].SetActive(false);
 				}
 
 				if(couple3.Contains(groups[i].transform.GetChild(0).gameObject) && 
@@ -138,6 +143,8 @@ public class WhaleControl : MonoBehaviour {
 					child3.position = new Vector3(child1.position.x, child2.position.y+0.7f, child3.position.z);
 					child2.GetComponent<Animator>().SetTrigger("rot");
 					child3.GetComponent<Animator>().SetTrigger("ready");
+
+					buttons[2].SetActive(false);
 				}
 			}
 		}
@@ -147,6 +154,7 @@ public class WhaleControl : MonoBehaviour {
 				whale.GetComponent<AudioSource>().Stop();
 				whale.GetComponent<MoveControl>().particles.Stop();
 			}
+			SetValues(1, 0);
 		}
 	}
 
