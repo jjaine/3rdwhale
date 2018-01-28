@@ -142,6 +142,12 @@ public class WhaleControl : MonoBehaviour {
 			}
 		}
 		Debug.Log("Correct was: "+correct);
+		if(correct == 3){
+			foreach(GameObject whale in whales){
+				whale.GetComponent<AudioSource>().Stop();
+				whale.GetComponent<MoveControl>().particles.Stop();
+			}
+		}
 	}
 
 	public void PlayGroup(int i){
