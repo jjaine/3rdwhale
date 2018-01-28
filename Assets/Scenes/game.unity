@@ -6523,7 +6523,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b089dd73d8b674e4c9bb1478bc706797, type: 3}
   - {fileID: 8300000, guid: 29c269914edf64c0398ee1913dcd61ad, type: 3}
   - {fileID: 8300000, guid: e2ea2779ff4e342d0b019b9f596fca5b, type: 3}
-  - {fileID: 8300000, guid: b1666e7c1f1254c46be0fd47431d9048, type: 3}
   - {fileID: 8300000, guid: bda7fc093b0cf42c9ace8e0cac83d031, type: 3}
   amSounds:
   - {fileID: 8300000, guid: f175c115d7629499791fd9bd72023bb0, type: 3}
@@ -6532,10 +6531,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3b4ae4d1dd4bb40968e1bff95dba5dbf, type: 3}
   - {fileID: 8300000, guid: fc135c5b8ff574580b5826db14b24607, type: 3}
   - {fileID: 8300000, guid: ed5d394d585ea4c268325a9c22734c0a, type: 3}
-  buttons:
-  - {fileID: 365568072}
-  - {fileID: 699613051}
-  - {fileID: 1308568366}
 --- !u!1 &1654974928 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1158051075650442, guid: 57e82764359904274bd9f7a08d29df2f,
